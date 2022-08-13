@@ -1,0 +1,10 @@
+concepts : 
+les fonctions pures et impures, les side effect.
+l'uttilisation de useeffect pour encapsuler les side effects.
+les cycles de rendering des composant.
+mounting/update/unmounting.
+Tout ce qui fait que les composant re-render : changement de state, changement de props.
+fonctionnement du DOM / Virutal DOM. Avec un dom Snapshot.
+le fonctionnement de Js ligne par ligne.
+Le fait que jsx est du javascript avec la possibilité de return de l'hmtl;
+on peut faire du "pure-react"

@@ -5,8 +5,11 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase.utils";
+import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 import "./sign-up-form.style.scss";
+import { useContext } from "react";
+import { UserContext } from "../../context/user.context";
 const SignUpForm = () => {
   const defaultFormField = {
     displayName: "",
@@ -24,8 +27,6 @@ const SignUpForm = () => {
   const resetFormFields = () => {
     setFormField(defaultFormField);
   };
-
-  console.log(formField);
 
   const onFormSubmit = async (e) => {
     e.preventDefault();
@@ -84,7 +85,9 @@ const SignUpForm = () => {
           onChange={onFormChange}
           value={confirmPassword}
         />
-        <button type="submit">Sign Up</button>
+        <Button style={{ cursor: "pointer" }} type="submit" buttonType="">
+          SignUp
+        </Button>
       </form>
     </div>
   );
