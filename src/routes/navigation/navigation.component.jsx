@@ -7,22 +7,17 @@ import { UserContext } from "../../context/user.context";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import { useState } from "react";
-
+import { CartContext } from "../../context/cart.context";
 const Navigation = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
-
-  console.log(currentUser);
+  const { cartOpen, setCartOpen } = useContext(CartContext);
   const signOutHandler = async () => {
     await signOutUser();
     setCurrentUser(null);
   };
-
-  const [cartOpen, setCartOpen] = useState(false);
   const cartToogleHandler = () => {
     setCartOpen(!cartOpen);
   };
-
-  console.log(cartOpen);
   return (
     <>
       <div className="navigation">

@@ -5,7 +5,6 @@ import { ProductsContext } from "../../context/product.context";
 import "./shop.style.scss";
 const Shop = () => {
   const { products, setProducts } = useContext(ProductsContext);
-  console.log(products);
   return (
     <div className="shop-page">
       {products.map((product) => {
