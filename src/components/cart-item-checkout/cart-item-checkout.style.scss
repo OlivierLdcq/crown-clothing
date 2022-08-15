@@ -1,0 +1,18 @@
+.cartItem-checkout {
+  width: 70%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  & > * {
+  }
+  img {
+    width: auto;
+    height: 230px;
+  }
+  button {
+    cursor: pointer;
+  }
+}
