@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const array = [
+        {
+          title: "recipe1",
+          list: { apple: "take two", oranges: "3 well ripe" },
+        },
+        {
+          title: "recipe2",
+          list: { apple: "take well ", oranges: "3 well ripe" },
+        },
+      ];
+
+      const object = array.reduce((acc, item, index) => {
+        console.log(`at index ${index}`);
+        console.log("acc :", acc);
+        console.log(item);
+        acc[item.title] = item.list;
+        console.log("acc modified", acc);
+        return acc;
+      }, {});
+      //   console.log(object);
+    </script>
+  </body>
+</html>
