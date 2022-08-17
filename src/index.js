@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { UserContextProvider } from "./context/user.context";
 import {
-  CategoriesContext,
   CategoriesProvider,
   ProductsContextProvider,
 } from "./context/categories.context";

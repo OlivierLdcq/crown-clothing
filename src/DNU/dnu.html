@@ -28,6 +28,29 @@
         return acc;
       }, {});
       //   console.log(object);
+
+      function doSomething() {
+        console.log("yo ! I do something");
+      }
+      doSomething();
+      const doSomething2 = () => {
+        console.log("yo ! I do something2");
+      };
+      doSomething2();
+      var nonRemontée = function () {
+        console.log("truc");
+      };
+      nonRemontée();
+
+      var toto = function () {
+        console.log("tototooo"); // "toto"
+        return 32;
+      };
+      console.log(toto());
+      //   const shot = function () {
+      //     toto();
+      //   };
+      //   shot();
     </script>
   </body>
 </html>

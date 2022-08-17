@@ -5,7 +5,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase.utils";
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPES_CLASSES } from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 import "./sign-up-form.style.scss";
 import { useContext } from "react";
@@ -85,7 +85,11 @@ const SignUpForm = () => {
           onChange={onFormChange}
           value={confirmPassword}
         />
-        <Button style={{ cursor: "pointer" }} type="submit" buttonType="">
+        <Button
+          style={{ cursor: "pointer" }}
+          type="submit"
+          buttonType={BUTTON_TYPES_CLASSES.base}
+        >
           SignUp
         </Button>
       </form>

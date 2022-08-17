@@ -1,13 +1,18 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useContext } from "react";
 import { ReactComponent as CrownLogo } from "../../assets/crown.svg";
-import "./navigation.style.scss";
 import { signOutUser } from "../../utils/firebase.utils";
 import { UserContext } from "../../context/user.context";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
-import { useState } from "react";
 import { CartContext } from "../../context/cart.context";
+import {
+  LogoContainer,
+  NavigationContainer,
+  NavLink,
+  NavLinksContainers,
+} from "./navigation.style.js";
+
 const Navigation = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const { cartOpen, setCartOpen } = useContext(CartContext);
@@ -20,31 +25,22 @@ const Navigation = () => {
   };
   return (
     <>
-      <div className="navigation">
-        <Link className="logo-container" to="/">
+      <NavigationContainer>
+        <LogoContainer to="/">
           <CrownLogo className="logo" />
-        </Link>
-        <div className="nav-links-container">
-          <Link className="nav-link" to="/shop">
-            SHOP
-          </Link>
-          <Link className="nav-link" to="/contact">
-            CONTACT
-          </Link>
+        </LogoContainer>
+        <NavLinksContainers>
+          <NavLink to="/shop">SHOP</NavLink>
+          <NavLink to="/contact">CONTACT</NavLink>
           {currentUser ? (
-            <span className="nav-link" onClick={signOutHandler}>
-              {" "}
-              SIGNOUT
-            </span>
+            <span onClick={signOutHandler}> SIGNOUT</span>
           ) : (
-            <Link className="nav-link" to="/signin">
-              SIGNIN
-            </Link>
+            <NavLink to="/signin">SIGNIN</NavLink>
           )}
           <CartIcon cartToogleHandler={cartToogleHandler} />
-        </div>
+        </NavLinksContainers>
         {cartOpen && <CartDropdown />}
-      </div>
+      </NavigationContainer>{" "}
       <Outlet />{" "}
     </>
   );

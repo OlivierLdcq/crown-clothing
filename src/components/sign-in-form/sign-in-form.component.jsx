@@ -9,7 +9,8 @@ import {
 
 import { UserContext } from "../../context/user.context";
 
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPES_CLASSES } from "../button/button.component";
+
 import FormInput from "../form-input/form-input.component";
 import "./sign-in-form.style.scss";
 
@@ -80,13 +81,17 @@ const SignInForm = () => {
         />
         <div className="buttons-container">
           {" "}
-          <Button style={{ cursor: "pointer" }} type="submit" buttonType="">
+          <Button
+            // style={{ cursor: "pointer" }}
+            type="submit"
+            buttonType={BUTTON_TYPES_CLASSES.base}
+          >
             Sign In
           </Button>
           <Button
-            style={{ cursor: "pointer" }}
+            // style={{ cursor: "pointer" }}
             type="button"
-            buttonType="google"
+            buttonType="google-sign-in"
             onClick={logGoogleUser}
           >
             Google
